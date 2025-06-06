@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // No, this configuration runs all tests in the bc-registration module
+            // To run tests for current file only, add the file path to args:
+            "name": "Jest: Current File",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/.bin/jest",
+            "args": [
+                "--config",
+                "${workspaceFolder}/src/bc-registration/jest.config.js",
+                "--runInBand",
+                "${file}" // This will run tests only for currently opened file
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        }
+    ]
+}
